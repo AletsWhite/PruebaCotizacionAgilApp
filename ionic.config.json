@@ -1,0 +1,8 @@
+{
+  "name": "Cotizador",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "c8753f04"
+}

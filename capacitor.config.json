@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Cotizador",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

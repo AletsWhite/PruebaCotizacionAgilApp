@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/productos"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">Nuevo Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-grid class="ion-no-padding">
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <ion-img [src]="listaProductos[0].URLimagen"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary" expand="full">
+          Crear
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="danger" expand="full">
+          Descartar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Nombre:</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-input type="text" placeholder="Nombre del Producto">
+            </ion-input>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Precio:</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-input type="number" placeholder="$$$$">
+            </ion-input>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">Aplica m^2:</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <ion-toggle mode="ios">
+            </ion-toggle>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <h1>Atributos:</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-item *ngFor="let atributo of atributos">
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-button slot="end" (click)="borrarAtributo( atributo.id )">
+                  <ion-icon name="trash"></ion-icon>
+                </ion-button>
+              </ion-item>
+              <ion-card-title>Nombre:</ion-card-title>
+              <ion-input type="text" placeholder="Nombre del Atributo" #txtNombreAtributo></ion-input>
+            </ion-card-content>
+            <ion-card-content>
+              <ion-card-title>Cantidad / Porcentaje</ion-card-title>
+              <ion-input type="text" placeholder="+ %" #txtCantidadAtributo></ion-input>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" color="primary" (click)="agregarAtributo()">
+          Nuevo Atributo
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+
+
+  </ion-grid>
